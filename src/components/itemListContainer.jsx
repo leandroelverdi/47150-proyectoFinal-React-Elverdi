@@ -1,3 +1,1 @@
-export const itemListContainer = () => {
-  return <div></div>
-}
+export const ItemListContainer = (props) => <div>{props.greeting}</div>;
