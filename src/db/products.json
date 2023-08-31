@@ -1,20 +1,20 @@
 [
   {
-    "id": 1,
+    "id": "1",
     "name": "Camioneta",
     "marca": "Mercedes",
-    "año": 2020,
-    "categoria": "SEDAN",
+    "age": 2020,
+    "category": "SEDAN",
     "stock": 6,
-    "precio": 162000
+    "price": 162000
   },
   {
-    "id": 2,
+    "id": "2",
     "name": "Mercedes 250",
     "marca": "Mercedes",
-    "año": 2020,
-    "categoria": "SUV",
+    "age": 2017,
+    "category": "SUV",
     "stock": 12,
-    "precio": 42000
+    "price": 42000
   }
 ]
