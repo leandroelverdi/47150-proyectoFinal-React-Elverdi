@@ -1,46 +1,40 @@
-import { useEffect, useRef, useState } from "react";
+import { NavLink } from "react-router-dom";
 import { CartWidget } from "./CartWidget";
 
-export const NavBar = () => {
-  const [isIntersecting, setIsIntersecting] = useState(false);
-  const navRef = useRef();
+const styleNavLink = ({ isActive }) => (isActive ? "bg-red-100" : "");
 
-  useEffect(() => {
-    const navbar = navRef.current;
+// ${
+//   isIntersecting
+//     ? "mt-0 w-full animate-fade"
+//     : "rounded-lg mt-12 inset-x-0 mx-auto w-4/6 animate-fade-down"
+// }
 
-    const observer = new IntersectionObserver((entries) =>
-      entries.map((entry) => setIsIntersecting(entry.isIntersecting))
-    );
-
-    if (navbar) {
-      observer.observe(navbar);
-    }
-  }, []);
-
+export const NavBar = (props) => {
   return (
     <header
-      ref={navRef}
-      className={`flex justify-between bg-white px-4 w-4/5 mx-auto rounded sticky ${isIntersecting ? "top-10" : "top-20"}`}
+      ref={props.elementRef}
+      className={
+        "flex justify-between bg-white px-4 fixed animate-duration-500 w-4/6 rounded-lg mt-12 inset-x-0 mx-auto"
+      }
     >
-      <a href="#home" className="flex items-center gap-1">
-        <img src="logo.png" alt="Logo" className="w-[80px]"></img>Tienda
-      </a>
-      <nav className="flex items-center justify-between w-100 h-20">
+      <NavLink to="/" className="flex grow basis-0 gap-2 items-center">
+        <img src="logo.png" alt="Logo" className="w-[80px]"></img>
+        DulcineaCakes
+      </NavLink>
+      <nav className="hidden xl:flex items-center">
         <ul className="flex gap-4 [&>li>a]:rounded [&>li>a]:px-4 [&>li>a]:py-2">
           <li>
-            <a href="#home" className="hover:bg-blue-300">
+            <NavLink to="/" className={styleNavLink}>
               Inicio
-            </a>
+            </NavLink>
           </li>
           <li>
-            <a href="#products" className="hover:bg-blue-300">
+            <NavLink to="/category/:1" className={styleNavLink}>
               Productos
-            </a>
+            </NavLink>
           </li>
           <li>
-            <a href="#about-us" className="hover:bg-blue-300">
-              Sobre Nosotros
-            </a>
+            <NavLink to="/">Sobre Nosotros</NavLink>
           </li>
         </ul>
       </nav>
