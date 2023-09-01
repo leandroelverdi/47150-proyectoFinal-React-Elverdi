@@ -8,8 +8,6 @@ export const ItemListContainer = (props) => {
 
   const { id } = useParams();
 
-  console.log(id);
-
   useEffect(() => {
     const promise = new Promise((resolve, reject) => {
       setTimeout(() => resolve(data), 1000);

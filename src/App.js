@@ -4,11 +4,12 @@ import { ItemListContainer } from "./components/itemListContainer";
 import { ItemDetailContainer } from "./components/ItemDetailContainer";
 
 export const App = () => {
+
   return (
     <>
       <BrowserRouter>
         <NavBar />
-        <main className="relative flex justify-center flex-col inset-y-24 pb-32">
+        <main className="relative flex justify-center flex-col inset-y-24 pb-32" >
           <Routes>
             <Route
               path="/"
