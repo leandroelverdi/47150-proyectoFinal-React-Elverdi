@@ -11,20 +11,15 @@ export const ItemDetailContainer = (props) => {
   useEffect(() => {
     const promise = new Promise((resolve, reject) => {
       setTimeout(() => {
-        const productById = data.find((product) => product.id === id);
+        const productById = data.find((product) => product.id === parseInt(id));
         resolve(productById);
-      }, 2000);
+      }, 1000);
     });
 
     promise.then((data) => setProduct(data));
-  }, []);
+  }, [id]);
 
   if (!product) return <div>Loading...</div>;
 
-  return (
-    <main>
-      <h1>Detalles</h1>
-      <ItemDetail product={product} />
-    </main>
-  );
+  return <ItemDetail product={product} />;
 };

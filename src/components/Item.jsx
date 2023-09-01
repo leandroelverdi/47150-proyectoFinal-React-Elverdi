@@ -1,12 +1,12 @@
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export const Item = ({ product }) => (
-  <div key={product.id} className="max-w-sm rounded overflow-hidden shadow-lg">
-    <img className="w-full" src="" alt=""></img>
+  <div key={product.id} className="flex flex-col rounded-lg shadow-lg overflow-hidden">
+    <img className="object-cover w-[32rem] h-96" src={product.url} alt="Sneaker" />
     <div className="px-6 py-4">
       <div className="font-bold text-xl mb-2">{product.name}</div>
       <p className="text-gray-700 text-base">{product.category}</p>
     </div>
-    <NavLink to={`item/${product.id}`}><button>Apretame</button></NavLink>
+    <Link to={`item/${product.id}`} className="w-2/4 self-center text-center p-2 bg-gray-100 rounded-lg my-4">Ver Mas</Link>
   </div>
 );

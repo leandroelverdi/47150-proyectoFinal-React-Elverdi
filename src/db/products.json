@@ -1,20 +1,84 @@
 [
   {
-    "id": "1",
-    "name": "Camioneta",
-    "marca": "Mercedes",
-    "age": 2020,
-    "category": "SEDAN",
-    "stock": 6,
-    "price": 162000
+    "id": 1,
+    "name": "Air Jordan Legacy 312 Low",
+    "brand": "nike",
+    "color": "red",
+    "stock": 7,
+    "price": 210,
+    "url": "/images/Air Jordan 4 RedCement.webp"
+    
   },
   {
-    "id": "2",
-    "name": "Mercedes 250",
-    "marca": "Mercedes",
-    "age": 2017,
-    "category": "SUV",
+    "id": 2,
+    "name": "Air Jordan 1 Mid SE",
+    "brand": "nike",
+    "color": "orange",
     "stock": 12,
-    "price": 42000
+    "price": 135,
+    "url": "/images/Air Jordan 1 Mid SE.webp"
+  },
+  {
+    "id": 3,
+    "name": "Nike G.T. Jump 2",
+    "brand": "nike",
+    "color": "black",
+    "stock": 4,
+    "price": 180,
+    "url": "/images/Nike G.T. Jump 2.webp"
+  },
+  {
+    "id": 4,
+    "name": "Air Jordan 1 Mid",
+    "brand": "nike",
+    "color": "violet",
+    "price": 125,
+    "stock": 21,
+    "url": "/images/Air Jordan 1 Mid.jfif"
+  },
+  {
+    "id": 5,
+    "name": "DURAMO SL 2.0",
+    "brand": "adidas",
+    "color": "black",
+    "price": 49,
+    "stock": 27,
+    "url": "/images/DURAMO SL 2.0.avif"
+  },
+  {
+    "id": 6,
+    "name": "QUESTAR",
+    "brand": "adidas",
+    "color": "white",
+    "price": 51,
+    "stock": 15,
+    "url": "/images/QUESTAR.avif"
+  },
+  {
+    "id": 7,
+    "name": "NMD_V3",
+    "brand": "adidas",
+    "color": "yellow",
+    "price": 64,
+    "stock": 5,
+    "url": "/images/NMD_V3.avif"
+  },
+  {
+    "id": 8,
+    "name": "ULTRABOOST LIGHT",
+    "brand": "adidas",
+    "color": "white",
+    "price": 112,
+    "stock": 14,
+    "url": "/images/ULTRABOOST LIGHT.avif"
+  },
+  {
+    "id": 9,
+    "name": "ADIFOM Q",
+    "brand": "adidas",
+    "color": "brown",
+    "price": 80,
+    "stock": 9,
+    "url": "/images/ADIFOM Q.avif"
   }
 ]

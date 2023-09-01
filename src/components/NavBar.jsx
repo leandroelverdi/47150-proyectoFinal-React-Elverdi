@@ -14,24 +14,30 @@ export const NavBar = (props) => {
     <header
       ref={props.elementRef}
       className={
-        "flex justify-between bg-white px-4 fixed animate-duration-500 w-4/6 rounded-lg mt-12 inset-x-0 mx-auto"
+        "flex justify-between bg-white px-4 fixed animate-duration-500 w-4/6 rounded-lg mt-12 inset-x-0 mx-auto z-10"
       }
     >
       <NavLink to="/" className="flex grow basis-0 gap-2 items-center">
-        <img src="logo.png" alt="Logo" className="w-[80px]"></img>
-        DulcineaCakes
+        <img src="/logo.png" alt="Logo" className="w-20" />
+        Sneakers
       </NavLink>
-      <nav className="hidden xl:flex items-center">
+      <nav className="flex items-center">
         <ul className="flex gap-4 [&>li>a]:rounded [&>li>a]:px-4 [&>li>a]:py-2">
           <li>
             <NavLink to="/" className={styleNavLink}>
               Inicio
             </NavLink>
           </li>
-          <li>
-            <NavLink to="/category/:1" className={styleNavLink}>
-              Productos
-            </NavLink>
+          <li className="relative group">
+            <NavLink>Categorias</NavLink>
+            <ul className="absolute hidden pt-2 group-hover:block">
+              <li>
+                <NavLink to={`category/nike`} className="block px-4 py-2 bg-red-100">Nike</NavLink>
+              </li>
+              <li>
+                <NavLink to={`category/adidas`} className="block px-4 py-2">Adidas</NavLink>
+              </li>
+            </ul>
           </li>
           <li>
             <NavLink to="/">Sobre Nosotros</NavLink>

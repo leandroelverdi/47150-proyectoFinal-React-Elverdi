@@ -22,10 +22,10 @@ export const ItemCount = () => {
   }
 
   return (
-    <div className="[&>span]:px-4">
-      <span onClick={handleDecreaseCount}>-</span>
+    <div className="[&>button]:px-4">
+      <button onClick={handleDecreaseCount}>-</button>
       <span>{count}</span>
-      <span onClick={handleIncreaseCount}>+</span>
+      <button onClick={handleIncreaseCount}>+</button>
       <button onClick={onAdd} className="bg-red-100 p-2">
         Agregar al carrito
       </button>

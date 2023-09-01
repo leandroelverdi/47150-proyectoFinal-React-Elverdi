@@ -12,25 +12,27 @@ export const ItemListContainer = (props) => {
 
   useEffect(() => {
     const promise = new Promise((resolve, reject) => {
-      setTimeout(() => resolve(data), 2000);
+      setTimeout(() => resolve(data), 1000);
     });
 
     promise.then((data) => {
-      if(!id) {
+      if (!id) {
         setProducts(data);
       } else {
-        const productsFiltered = data.filter(product => product.category === id);
+        const productsFiltered = data.filter(
+          (product) => product.brand === id
+        );
         setProducts(productsFiltered);
       }
     });
-  }, []);
+  }, [id]);
 
   return (
-    <main>
-      <div>{props.greeting}</div>
-      <div>
+    <>
+      <h1 className="text-6xl text-center my-20">{props.greeting}</h1>
+      <div className="container mx-auto grid grid-cols-3 justify-items-center gap-8">
         <ItemList products={products} />
       </div>
-    </main>
+    </>
   );
 };
