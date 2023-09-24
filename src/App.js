@@ -1,15 +1,17 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { NavBar } from "./components/NavBar";
-import { ItemListContainer } from "./components/itemListContainer";
+import { Footer } from "./components/Footer";
+import { Cart } from "./components/Cart";
+import { ItemListContainer } from "./components/ItemListContainer";
 import { ItemDetailContainer } from "./components/ItemDetailContainer";
+import { CartProvider } from "./contexts/CartContext";
 
 export const App = () => {
-
   return (
-    <>
+    <CartProvider>
       <BrowserRouter>
         <NavBar />
-        <main className="relative flex justify-center flex-col inset-y-24 pb-32" >
+        <main className="flex justify-center flex-col">
           <Routes>
             <Route
               path="/"
@@ -20,10 +22,11 @@ export const App = () => {
               element={<ItemListContainer greeting="Categorias" />}
             />
             <Route path="/item/:id" element={<ItemDetailContainer />} />
-            <Route path="*" element={404} />
+            <Route path="/cart" element={<Cart />} />
           </Routes>
         </main>
+        <Footer />
       </BrowserRouter>
-    </>
+    </CartProvider>
   );
 };

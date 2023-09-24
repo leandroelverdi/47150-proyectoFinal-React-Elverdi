@@ -1,8 +1,6 @@
 import { useState } from "react";
 
-const stock = 4;
-
-export const ItemCount = () => {
+export const ItemCount = ({ onAdd, stock }) => {
   const [count, setCount] = useState(1);
 
   const handleDecreaseCount = () => {
@@ -17,16 +15,12 @@ export const ItemCount = () => {
     }
   };
 
-  const onAdd = ()=> {
-    alert(count);
-  }
-
   return (
     <div className="[&>button]:px-4">
       <button onClick={handleDecreaseCount}>-</button>
       <span>{count}</span>
       <button onClick={handleIncreaseCount}>+</button>
-      <button onClick={onAdd} className="bg-red-100 p-2">
+      <button onClick={() => onAdd(count)} className="bg-red-100 p-2">
         Agregar al carrito
       </button>
     </div>
