@@ -18,7 +18,7 @@ export const ItemListContainer = (props) => {
   useEffect(() => {
     const db = getFirestore();
     const refCollection = id
-      ? query(collection(db, "ItemCollection"), where("brand", "==", id))
+      ? query(collection(db, "ItemCollection"), where("category", "==", id))
       : collection(db, "ItemCollection");
 
     getDocs(refCollection)
@@ -43,7 +43,7 @@ export const ItemListContainer = (props) => {
 
   return (
     <>
-      <h1 className="text-6xl text-center mt-10 mb-20">{props.greeting}</h1>
+      <h1 className="text-4xl font-semibold uppercase text-center mt-10 mb-20">{props.greeting}</h1>
       <div className="container-lg mx-auto grid grid-cols-3 justify-items-center gap-8 mb-10">
         <ItemList products={products} />
       </div>

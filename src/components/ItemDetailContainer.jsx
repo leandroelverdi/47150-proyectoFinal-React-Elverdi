@@ -21,7 +21,12 @@ export const ItemDetailContainer = (props) => {
       .finally(() => setLoading(false));
   }, [id]);
 
-  if (loading) return <div>Loading...</div>;
+  if (loading)
+    return (
+      <div className="flex items-center justify-center absolute inset-0">
+        <div className="inline-block h-10 w-10 rounded-full border-4 border-solid border-black border-r-transparent animate-spin"></div>
+      </div>
+    );
 
   return <ItemDetail product={product} />;
 };

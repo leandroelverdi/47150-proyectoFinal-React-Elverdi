@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { CartWidget } from "./CartWidget";
 import { useState, useEffect } from "react";
 import { getFirestore, collection, getDocs } from "firebase/firestore";
@@ -20,7 +20,7 @@ export const NavBar = (props) => {
     });
   }, []);
 
-  const categories = brand.map((item) => item.brand);
+  const categories = brand.map((item) => item.category);
 
   const uniqueCategories = new Set(categories);
 
@@ -33,34 +33,34 @@ export const NavBar = (props) => {
           : "fixed mt-0 w-full animate-fade"
       }`}
     >
-      <NavLink to="/" className="flex grow basis-0 gap-2 items-center">
+      <Link to="/" className="flex grow basis-0 gap-2 items-center">
         <img src="/logo.png" alt="Logo" className="w-24" />
         Sneakers
-      </NavLink>
+      </Link>
       <nav className="flex items-center">
-        <ul className="flex gap-4 [&>li>a]:rounded [&>li>a]:px-4 [&>li>a]:py-2">
+        <ul className="flex gap-4 [&>li>a]:rounded [&>li>a]:px-4 [&>li>a]:py-2 [&>li>a:hover]:bg-cyan-300 [&>li>a:hover]:text-white">
           <li>
-            <NavLink to="/" className={({ isActive }) => (isActive ? "bg-red-100" : "")}>
+            <Link to="/">
               Inicio
-            </NavLink>
+            </Link>
           </li>
           <li className="relative group">
-            <NavLink to="/">Categorias</NavLink>
-            <ul className="absolute hidden pt-2 group-hover:block ml-3">
+            <Link to="/">Categorias</Link>
+            <ul className="absolute hidden mt-1.5 group-hover:block bg-gray-100 p-4 rounded [&>li:hover]:border-cyan-300 [&>li:hover]:border-b-2">
               {[...uniqueCategories].map((category) => (
                 <li key={category}>
-                  <NavLink
+                  <Link
                     to={`/category/${category}`}
-                    className="block px-4 py-2 hover:bg-red-100 rounded-lg capitalize"
+                    className="block px-4 py-2 rounded-lg capitalize"
                   >
                     {category}
-                  </NavLink>
+                  </Link>
                 </li>
               ))}
             </ul>
           </li>
           <li>
-            <NavLink to="/">Sobre Nosotros</NavLink>
+            <Link to="/about">Sobre Nosotros</Link>
           </li>
         </ul>
       </nav>
