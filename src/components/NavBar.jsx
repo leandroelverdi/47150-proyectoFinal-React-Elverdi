@@ -29,7 +29,7 @@ export const NavBar = (props) => {
       ref={elementRef}
       className={`flex justify-between bg-gray-100 px-4 animate-duration-500 z-10 ${
         atTop
-          ? "rounded-lg mt-12 inset-x-0 mx-auto w-4/6 animate-fade-down"
+          ? "rounded-lg mt-12 inset-x-0 mx-auto w-4/6 animate-flip-up"
           : "fixed mt-0 w-full animate-fade"
       }`}
     >

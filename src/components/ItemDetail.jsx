@@ -5,20 +5,27 @@ import { CartContext } from "../contexts/CartContext";
 export const ItemDetail = ({ product }) => {
   const { addItem } = useContext(CartContext);
   const onAdd = (count) => addItem(product, count);
-
   return (
-    <div className="relative flex justify-center inset-y-24 pb-32 mt-20">
+    <div className="absolute inset-0 flex justify-center items-center">
       <img
-        className="w-96 h-96 rounded-full"
+        className="w-96 h-96 rounded bg-cyan-200 p-1"
         src={product.thumbnail}
         alt="Sneakers"
       />
-      <div className="flex flex-col justify-between ml-10">
-        <h2>Nombre: {product.name}</h2>
-        <span>Marca: {product.brand}</span>
-        <span>Stock: {product.stock}</span>
-        <b>${product.price}</b>
-        <ItemCount stock={product.stock} onAdd={onAdd} />
+      <div className="flex flex-col justify-between ml-10 h-2/5">
+        <h2 className="text-2xl font-bold">Nombre: {product.name}</h2>
+        <p className="text-xl capitalize">Marca: {product.brand}</p>
+        {product.stock === 1 ? (
+          <p className="text-xl text-red-600">Ultimo producto disponible</p>
+        ) : (
+          <p className="text-xl">Stock de productos: {product.stock}</p>
+        )}
+        <b className="text-2xl self-end">${product.price}</b>
+        <ItemCount
+          itemClass="self-center"
+          stock={product.stock}
+          onAdd={onAdd}
+        />
       </div>
     </div>
   );

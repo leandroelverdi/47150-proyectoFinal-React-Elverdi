@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export const ItemCount = ({ onAdd, stock }) => {
+export const ItemCount = ({ onAdd, stock, itemClass }) => {
   const [count, setCount] = useState(1);
 
   const handleDecreaseCount = () => {
@@ -16,13 +16,49 @@ export const ItemCount = ({ onAdd, stock }) => {
   };
 
   return (
-    <div className="[&>button]:px-4">
-      <button onClick={handleDecreaseCount}>-</button>
-      <span>{count}</span>
-      <button onClick={handleIncreaseCount}>+</button>
-      <button onClick={() => onAdd(count)} className="bg-red-100 p-2">
-        Agregar al carrito
-      </button>
+    <div className={`${itemClass} flex items-center gap-8`}>
+      {stock === 1 ? (
+        <button
+          onClick={() => onAdd(count)}
+          className="bg-cyan-200 rounded hover:bg-cyan-300 p-3 font-bold"
+        >
+          Agregar al carrito
+        </button>
+      ) : (
+        <>
+          <button
+            className="flex items-center justify-center text-xl rounded-full h-10 w-10 bg-cyan-200 hover:bg-cyan-300"
+            onClick={handleDecreaseCount}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="1em"
+              viewBox="0 0 448 512"
+            >
+              <path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z" />
+            </svg>
+          </button>
+          <span className="text-2xl">{count}</span>
+          <button
+            className="flex items-center justify-center text-xl rounded-full h-10 w-10 bg-cyan-200 hover:bg-cyan-300"
+            onClick={handleIncreaseCount}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="1em"
+              viewBox="0 0 448 512"
+            >
+              <path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z" />
+            </svg>
+          </button>
+          <button
+            onClick={() => onAdd(count)}
+            className="bg-cyan-200 rounded hover:bg-cyan-300 p-3 font-bold"
+          >
+            Agregar al carrito
+          </button>
+        </>
+      )}
     </div>
   );
 };
