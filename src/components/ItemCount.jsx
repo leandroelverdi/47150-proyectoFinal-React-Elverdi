@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export const ItemCount = ({ onAdd, stock, itemClass }) => {
+export const ItemCount = ({ onAdd, quantity, itemClass }) => {
   const [count, setCount] = useState(1);
 
   const handleDecreaseCount = () => {
@@ -10,14 +10,14 @@ export const ItemCount = ({ onAdd, stock, itemClass }) => {
   };
 
   const handleIncreaseCount = () => {
-    if (stock > count) {
+    if (quantity > count) {
       setCount((prev) => prev + 1);
     }
   };
 
   return (
     <div className={`${itemClass} flex items-center gap-8`}>
-      {stock === 1 ? (
+      {quantity === 1 ? (
         <button
           onClick={() => onAdd(count)}
           className="bg-cyan-200 rounded hover:bg-cyan-300 p-3 font-bold"

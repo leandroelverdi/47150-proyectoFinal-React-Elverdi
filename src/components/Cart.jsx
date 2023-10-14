@@ -16,10 +16,10 @@ export const Cart = () => {
     items
       .reduce(
         (acumulador, valorActual) =>
-          acumulador + valorActual.quantity * valorActual.price,
+          acumulador + valorActual.price * valorActual.quantity,
         0
       )
-      .toFixed(2);
+      .toFixed(0);
 
   const handleChange = (ev) => {
     setFormValues((prev) => ({

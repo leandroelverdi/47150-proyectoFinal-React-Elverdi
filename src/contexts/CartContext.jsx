@@ -7,6 +7,7 @@ export const CartProvider = ({ children }) => {
   const [items, setItems] = useState([]);
 
   const addItem = (product, quantity) => {
+    console.log(product);
     const alreadyExists = items.some((item) => item.id === product.id);
 
     if (!alreadyExists) {
