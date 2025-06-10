@@ -6,6 +6,7 @@ import { ItemListContainer } from "./components/itemListContainer";
 import { ItemDetailContainer } from "./components/ItemDetailContainer";
 import { CartProvider } from "./contexts/CartContext";
 import { About } from "./components/About";
+import { ScrollToTopButton } from "./components/ScrollToTopButton";
 
 export const App = () => {
   return (
@@ -28,6 +29,7 @@ export const App = () => {
           </Routes>
         </main>
         <Footer />
+        <ScrollToTopButton />
       </BrowserRouter>
     </CartProvider>
   );
