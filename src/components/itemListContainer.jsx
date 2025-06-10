@@ -44,7 +44,7 @@ export const ItemListContainer = (props) => {
   return (
     <>
       <h1 className="text-4xl font-semibold uppercase text-center mt-10 mb-20">{props.greeting}</h1>
-      <div className="container-lg mx-auto grid grid-cols-3 justify-items-center gap-8 mb-10">
+      <div className="container-lg mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 justify-items-center gap-8 mb-10">
         <ItemList products={products} />
       </div>
     </>
