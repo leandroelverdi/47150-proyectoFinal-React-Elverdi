@@ -26,15 +26,11 @@ export const CartProvider = ({ children }) => {
     Swal.fire({
       toast: true,
       icon: "success",
-      position: "top-end",
+      position: "bottom-end",
       title: `Se agregó ${product.name} a su carrito`,
       showConfirmButton: false,
-      timer: 2000,
-      timerProgressBar: true,
-      didOpen: (toast) => {
-        toast.addEventListener("mouseover", Swal.stopTimer);
-        toast.addEventListener("mouseleave", Swal.resumeTimer);
-      },
+      timer: 1300,
+      timerProgressBar: true
     });
   };
 
