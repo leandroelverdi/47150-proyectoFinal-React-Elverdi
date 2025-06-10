@@ -12,7 +12,7 @@ export const App = () => {
     <CartProvider>
       <BrowserRouter>
         <NavBar />
-        <main className="flex justify-center flex-col">
+        <main className="flex-1 flex justify-center flex-col">
           <Routes>
             <Route
               path="/"
