@@ -31,16 +31,16 @@ export const NavBar = () => {
   return (
     <header
       ref={elementRef}
-      className={`bg-gray-100 z-10 px-2 sm:px-4 flex items-center justify-between h-20
-    ${atTop ? "rounded-lg mt-6 sm:mt-12 animate-flip-up w-5/6 mx-auto"
+      className={`bg-gray-100 z-10 px-2 md:px-4 flex items-center justify-between h-20
+    ${atTop ? "rounded-lg mt-6 md:mt-12 animate-flip-up w-5/6 mx-auto"
           : "fixed top-0 left-0 right-0 animate-fade"}
   `}
     >
       {/* Hamburguesa + Logo */}
-      <div className="flex items-center flex-shrink-0">
+      <div className="flex flex-grow basis-0 items-center">
         {/* Hamburger */}
         <button
-          className="flex flex-col items-center justify-center h-8 w-8 mr-2 sm:hidden"
+          className="flex flex-col items-center justify-center h-8 w-8 mr-2 md:hidden"
           onClick={() => {
             setMenuOpen((open) => !open);
             setCatMenuOpen(false);
@@ -53,8 +53,8 @@ export const NavBar = () => {
         </button>
         {/* Logo */}
         <Link to="/" className="flex gap-2 items-center">
-          <img src="/logo.png" alt="Logo" className="w-14 sm:w-24" />
-          <span className="font-bold text-lg sm:text-2xl">Sneakers</span>
+          <img src="/logo.png" alt="Logo" className="w-14 md:w-24" />
+          <span className="font-bold text-lg md:text-2xl">Sneakers</span>
         </Link>
       </div>
 
@@ -62,21 +62,21 @@ export const NavBar = () => {
       <nav
         className={`
           ${menuOpen ? "block absolute top-20 left-0 right-0 bg-gray-100 border-b z-20" : "hidden"}
-          sm:static sm:block sm:bg-transparent sm:border-0
+          md:static md:block md:bg-transparent md:border-0
         `}
       >
-        <ul className="flex flex-col sm:flex-row gap-2 sm:gap-4 p-4 sm:px-0 [&>li>a]:rounded [&>li>a]:px-4 [&>li>a]:py-2 [&>li>a:hover]:bg-cyan-300 [&>li>a:hover]:text-white">
+        <ul className="flex flex-col md:flex-row gap-2 md:gap-4 p-4 md:px-0 [&>li>a]:rounded [&>li>a]:px-4 [&>li>a]:py-2 [&>li>a:hover]:bg-cyan-300 [&>li>a:hover]:text-white">
           <li>
             <Link to="/" onClick={closeMenus}>
               Inicio
             </Link>
           </li>
           {/* Categorias */}
-          <li className="relative group w-full sm:w-auto">
+          <li className="relative group w-full md:w-auto">
             {/* MOBILE: click para abrir submenú */}
             <Link
               to="#"
-              className="w-full text-center sm:hidden px-4 py-2"
+              className="w-full text-center md:hidden px-4 py-2"
               onClick={() => setCatMenuOpen((open) => !open)}
             >
               Categorias
@@ -84,7 +84,7 @@ export const NavBar = () => {
             {/* DESKTOP: hover para abrir submenú */}
             <Link
               to="#"
-              className="hidden sm:inline px-4 py-2"
+              className="hidden md:inline px-4 py-2"
               tabIndex={-1}
               onClick={(e) => e.preventDefault()}
             >
@@ -92,7 +92,7 @@ export const NavBar = () => {
             </Link>
             {/* Submenú mobile */}
             <ul
-              className={`sm:hidden flex-col transition-all duration-200 overflow-hidden ${catMenuOpen ? "max-h-96" : "max-h-0"
+              className={`md:hidden flex-col transition-all duration-200 overflow-hidden ${catMenuOpen ? "max-h-96" : "max-h-0"
                 }`}
             >
               {uniqueCategories.map((category) => (
@@ -108,7 +108,7 @@ export const NavBar = () => {
               ))}
             </ul>
             {/* Submenú desktop */}
-            <ul className="hidden sm:absolute sm:mt-1.5 sm:group-hover:block bg-gray-100 p-4 rounded [&>li:hover]:border-cyan-300 [&>li:hover]:border-b-2 z-10">
+            <ul className="hidden md:absolute md:mt-1.5 md:group-hover:block bg-gray-100 p-4 rounded [&>li:hover]:border-cyan-300 [&>li:hover]:border-b-2 z-10">
               {uniqueCategories.map((category) => (
                 <li key={category}>
                   <Link
@@ -131,7 +131,7 @@ export const NavBar = () => {
       </nav>
 
       {/* Carrito siempre a la derecha */}
-      <div className="flex-shrink-0">
+      <div className="flex flex-grow basis-0">
         <CartWidget />
       </div>
     </header>
