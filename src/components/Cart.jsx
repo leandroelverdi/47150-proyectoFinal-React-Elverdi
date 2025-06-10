@@ -64,11 +64,11 @@ export const Cart = () => {
       <h2 className="text-4xl font-semibold uppercase text-center mt-10 mb-20">
         Carrito
       </h2>
-      <div className="grid grid-cols-3 w-5/6 mx-auto gap-4">
+      <div className="grid justify-items-center grid-cols-1 md:grid-cols-2 w-11/12 md:w-5/6 mx-auto gap-4">
         {items.map((item) => (
           <div
             key={item.id}
-            className="flex flex-col w-full items-center bg-gray-100 rounded mx-4 mt-4 p-4"
+            className="flex flex-col w-96 items-center bg-gray-100 rounded mx-0 md:mx-4 mt-4 p-4"
           >
             <img
               className="w-20 h-20 rounded-full object-cover"
@@ -89,21 +89,21 @@ export const Cart = () => {
           </div>
         ))}
       </div>
-      <div className="flex flex-col w-1/2 items-center mx-auto gap-4 my-8">
+      <div className="flex flex-col w-11/12 md:w-1/2 items-center mx-auto gap-4 my-8">
         <b className="font-bold">Total: ${total()}</b>
         <span className="font-bold">Total de productos: {totalWidget}</span>
         <button
-          className="bg-cyan-100 h-12 w-1/2 mx-auto hover:bg-cyan-200"
+          className="bg-cyan-100 h-12 w-full md:w-1/2 mx-auto hover:bg-cyan-200"
           onClick={() => clear()}
         >
           Vaciar carrito
         </button>
       </div>
-      <div className="bg-gray-200 w-2/4 mx-auto rounded p-6 flex flex-col items-center mb-10">
+      <div className="bg-gray-200 w-11/12 md:w-2/4 mx-auto rounded p-6 flex flex-col items-center mb-10">
         <h2 className="text-2xl font-bold text-center underline">
           Ingresar datos de usuario
         </h2>
-        <form className="flex flex-col gap-6 p-6 [&>input]:bg-slate-100 [&>input]:text-black [&>input]:outline-none [&>input]:px-2 [&>input]:bg-transparent [&>input]:border-b [&>input]:border-zinc-400 w-4/6">
+        <form className="flex flex-col gap-6 p-6 w-full md:w-4/6 [&>input]:bg-slate-100 [&>input]:text-black [&>input]:outline-none [&>input]:px-2 [&>input]:bg-transparent [&>input]:border-b [&>input]:border-zinc-400">
           <input
             className="placeholder:text-black placeholder:font-bold focus:placeholder:text-zinc-600"
             type="text"
@@ -135,7 +135,7 @@ export const Cart = () => {
           />
         </form>
         <button
-          className="bg-cyan-200 w-1/3 h-12 rounded hover:bg-cyan-300 font-semibold"
+          className="bg-cyan-200 w-full md:w-1/3 h-12 rounded hover:bg-cyan-300 font-semibold"
           onClick={sendOrder}
         >
           Comprar
